@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
+    <!-- <link rel="stylesheet" href="./styles.css"> -->
 </head>
 <body>
     <!-- Wrapper -->
@@ -15,15 +15,17 @@
         <div class="container">
             
             <!-- Heading -->
-            <div class="heading">
-                <h1>PASSWORD GENERATOR</h1>
-            </div>
+            <h1>PASSWORD GENERATOR</h1>
             
             <!-- Display Container -->
             <div class="displaycontainer">
-                <input type="text" class="password">
+                <input readonly class="display" placeholder="Password" data-passwordDisplay>
+                
                 <!-- Copy Button -->
-                <button class="copyBtn"></button>
+                <button class="copyBtn">
+                    <span data-copyMsg></span>
+                    <img src="./assets/copy.svg" alt="copy" width="23" height="23">
+                </button>
             </div>
 
             <!-- Input Container -->
@@ -32,11 +34,11 @@
                 <!-- Password Length -->
                 <div class="passLength">
                     <p>Password Length</p>
-                    <p class="length"></p>
+                    <p data-length></p>
                 </div>
 
-                <!-- Range -->
-                <input type="range" min="1" max="20" step="1" class="slider">
+                <!-- Range slider -->
+                <input type="range" min="1" max="20" step="1" class="slider" data-lengthSlider>
 
                 <!--  Options/Checkboxes  -->
                 <div class="check">
@@ -48,26 +50,27 @@
                     <label for="lowercase">Include Lowercase Letter</label>
                 </div>
                 <div class="check">
-                    <input type="checkbox" id="number">
+                    <input type="checkbox" id="numbers">
                     <label for="number">Include Numbers</label>
                 </div>
                 <div class="check">
-                    <input type="checkbox" id="symbol">
+                    <input type="checkbox" id="symbols">
                     <label for="symbol">Include Symbols</label>
                 </div>
 
                 <!-- Strength Container -->
-                <div class="strength-container">
+                <div class="strength-container"> 
                     <p>Strength</p>
-                    <div class="indicator" style="background-color: rgb(204, 204, 204); box-shadow: rgb(204, 204, 204) 0px 0px 12px 1px;"></div>
+                    <div data-indicator></div>
                 </div>
 
                 <!-- Generate Button -->
-                <button class="generate">GENERATE PASSWORD</button>
+                <button class="generateBtn">GENERATE PASSWORD</button>
             </div>
         </div>
     </div>
 
     <script src="./script.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/110e4bc1ee.js" crossorigin="anonymous"></script> -->
 </body>
 </html>
