@@ -1,21 +1,37 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'League Spartan', sans-serif;
 }
 
-h1,
-label,
-p {
-  color: white;
+/* global css variables */
+:root {
+  --dk-violet: hsl(268, 75%, 9%);
+  --lt-violet: hsl(268, 47%, 21%);
+  --lt-violet2: hsl(281, 89%, 26%);
+  --vb-violet: hsl(285, 91%, 52%);
+  --vb-violet2: hsl(290, 70%, 36%);
+
+  --vb-yellow: hsl(52, 100%, 62%);
+
+  --pl-white: hsl(0, 0%, 100%);
+
+  --vb-cyan: hsl(176, 100%, 44%);
+  --vb-cyan2: hsl(177, 92%, 70%);
+
+  --dk-text: hsl(198, 20%, 13%);
 }
 
-#wrapper {
-  height: 100vh;
+#wrapper{
   width: 100vw;
+  height: 100vh;
   display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(
     to right,
     rgb(254, 240, 138),
@@ -24,45 +40,45 @@ p {
   );
 }
 
-.container {
-    width: 90%;
-    max-width: 450px;
+.container{
+  width: 90%;
+  max-width: 450px;
+}
+h1{
+  color: var(--pl-white);
+  opacity: 0.75;
+  text-transform: 2px;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.2;
 }
 
-.heading{
-    line-height: 1.2;
-    color: white;
-    opacity: 0.75;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-.displaycontainer {
-  border: 2px solid black;
-  position: relative;
-  background-color: blue;
+.displaycontainer{
+  background-color: var(--dk-violet);
   border-radius: 1rem;
-  border-bottom: white;
-  padding-top: 0.35rem;
+  position: relative;
+  border-bottom: 0.35rem solid var(--lt-violet2);
   margin: 1rem 0;
+  padding-top: 0.35rem;
 }
 
-.displaycontainer input {
+.display{
   width: 100%;
   background-color: transparent;
   outline: none;
   border: none;
-  padding: 1.15rem 1rem;
-  color: yellow;
+  padding:  1.15rem 1rem;
+  color: var(--vb-yellow);
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 30px;
   letter-spacing: 1px;
   padding-right: 3.25rem;
+
 }
 
 .displaycontainer input::placeholder {
-  color: yellow;
+  color: var(--vb-yellow);
   text-transform: uppercase;
   opacity: 0.65;
   font-size: 1.5rem;
@@ -82,11 +98,58 @@ p {
 
 .input-container {
   width:100%;
-  background-color: blue;
+  background-color: var(--dk-violet);
   border: 2px solid black;
   border-radius: 1rem;
-  border-bottom: white;
-  padding:2rem;
-  
+  border-bottom: 0.35rem solid var(--lt-violet2);
+  padding:2rem; 
 }
 
+.passLength{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.passLength p:nth-child(1){
+  color: var(--pl-white);
+  font-size: 1.5rem;
+}
+.passLength p:nth-child(2){
+  color: var(--vb-yellow);
+  font-size: 1.5rem;
+}
+
+.strength-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.75rem;
+  margin-bottom: 2 rem;
+}
+
+.strength-container p{
+  color: var(--pl-white);
+  font-size: 1.5rem;
+}
+
+.indicator{
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.generateBtn{
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--vb-violet);
+  text-align: center;
+  border-radius: 0.75rem;
+  border-bottom: 0.35rem solid va(--vb-yellow);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--vb-yellow);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
